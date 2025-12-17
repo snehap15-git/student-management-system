@@ -1,0 +1,38 @@
+# Student Management System
+
+students = []
+
+def add_student():
+    name = input("Enter Student Name: ")
+    usn = input("Enter USN: ")
+    marks = input("Enter Marks: ")
+    students.append({"Name": name, "USN": usn, "Marks": marks})
+    print("Student added successfully!")
+
+def view_students():
+    if not students:
+        print("No student records found.")
+    else:
+        for i, student in enumerate(students, start=1):
+            print(f"\nStudent {i}")
+            print("Name :", student["Name"])
+            print("USN  :", student["USN"])
+            print("Marks:", student["Marks"])
+
+while True:
+    print("\n--- Student Management System ---")
+    print("1. Add Student")
+    print("2. View Students")
+    print("3. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        add_student()
+    elif choice == '2':
+        view_students()
+    elif choice == '3':
+        print("Exiting program...")
+        break
+    else:
+        print("Invalid choice! Try again.")
